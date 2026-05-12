@@ -1,0 +1,87 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "dynapanel"
+version = "0.1.0"
+description = "Modern dynamic panel data models for Python: Arellano-Bond, Blundell-Bond, system & difference GMM."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Hatef Tabbakhian", email = "tabbakhianhatef@gmail.com" }]
+maintainers = [{ name = "Hatef Tabbakhian", email = "tabbakhianhatef@gmail.com" }]
+keywords = [
+    "econometrics",
+    "panel data",
+    "GMM",
+    "Arellano-Bond",
+    "Blundell-Bond",
+    "dynamic panel",
+    "xtabond2",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+]
+
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "pandas>=2.0",
+    "polars>=0.20",
+]
+
+[project.optional-dependencies]
+tables = ["great_tables>=0.10"]
+plots = ["matplotlib>=3.7"]
+docs = ["mkdocs-material>=9", "mkdocstrings[python]>=0.24"]
+dev = [
+    "pytest>=7",
+    "pytest-cov",
+    "ruff>=0.4",
+    "mypy>=1.8",
+    "great_tables>=0.10",
+    "matplotlib>=3.7",
+]
+all = ["great_tables>=0.10", "matplotlib>=3.7"]
+
+[project.urls]
+Documentation = "https://github.com/Leotaby/dynapanel#readme"
+Repository = "https://github.com/Leotaby/dynapanel"
+Issues = "https://github.com/Leotaby/dynapanel/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/dynapanel"]
+
+[tool.hatch.build.targets.sdist]
+include = ["/src", "/tests", "/docs", "/README.md", "/LICENSE"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "SIM", "RUF"]
+ignore = [
+    "E501",  # line length is handled by formatter, occasional long line is fine
+    "B008",  # function call in argument default — sometimes we want that
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers"
+
+[tool.mypy]
+python_version = "3.10"
+strict_optional = true
+warn_unused_ignores = true
+# We're not going full strict here — empirical econ code has too much np.ndarray-of-mystery-shape.
+ignore_missing_imports = true

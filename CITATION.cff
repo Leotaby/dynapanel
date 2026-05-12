@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+title: dynapanel
+message: "If you use dynapanel in academic work, please cite it."
+type: software
+authors:
+  - family-names: Tabbakhian
+    given-names: Hatef
+version: 0.1.0
+date-released: 2026-05-12
+license: MIT
+repository-code: "https://github.com/Leotaby/dynapanel"
+abstract: >-
+  Python implementation of Difference and System GMM estimators for
+  dynamic panel data (Arellano-Bond, Blundell-Bond), with
+  Windmeijer-corrected standard errors, Hansen / AR(1) / AR(2)
+  specification tests, and collapsed-instrument support.
+keywords:
+  - econometrics
+  - panel data
+  - dynamic panel
+  - GMM
+  - Arellano-Bond
+  - Blundell-Bond
+  - xtabond2
