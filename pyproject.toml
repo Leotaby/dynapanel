@@ -50,6 +50,9 @@ dev = [
     "mypy>=1.8",
     "great_tables>=0.10",
     "matplotlib>=3.7",
+    # pyarrow is needed for polars↔pandas interop tests. Library users who
+    # only ever pass polars frames don't need it, so it's not a hard dep.
+    "pyarrow>=15",
 ]
 all = ["great_tables>=0.10", "matplotlib>=3.7"]
 
