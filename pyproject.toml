@@ -69,10 +69,18 @@ line-length = 100
 target-version = "py310"
 
 [tool.ruff.lint]
-select = ["E", "F", "W", "I", "UP", "B", "SIM", "RUF"]
+# We keep ruff's check intentionally light for v0.1 — focused on real bugs
+# (E, F, W, I) plus modern-syntax upgrades (UP) and likely-bugs (B).
+# Stylistic / opinionated rule families (RUF, SIM, PT) are off because they
+# flag things like Greek letters in math comments as "ambiguous unicode",
+# which is exactly what we want them for.
+select = ["E", "F", "W", "I", "UP", "B"]
 ignore = [
-    "E501",  # line length is handled by formatter, occasional long line is fine
-    "B008",  # function call in argument default — sometimes we want that
+    "E501",   # line length handled by formatter; occasional long line is fine
+    "B008",   # function call in default arg — sometimes we want that
+    "B905",   # zip() without strict= — too noisy, not a real bug source here
+    "B007",   # unused loop variable — happens in zip/enumerate patterns we want
+    "E741",   # ambiguous variable name (e.g. "l" for length) — we use l, L, etc. with intent
 ]
 
 [tool.pytest.ini_options]

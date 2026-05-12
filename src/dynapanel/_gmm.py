@@ -45,7 +45,7 @@ import numpy as np
 from scipy import linalg
 
 from ._data import Individual, split_into_individuals, to_polars, validate_panel
-from ._formula import Formula, Term, parse_formula
+from ._formula import Formula, parse_formula
 from ._instruments import (
     AssembledMatrices,
     assemble,
@@ -53,7 +53,6 @@ from ._instruments import (
 )
 from ._results import GMMResults
 from ._windmeijer import windmeijer_correction
-
 
 # ---------------------------------------------------------------------------
 # Public estimator classes
@@ -501,7 +500,8 @@ class GMMBase:
             Omega_i = np.eye(n_i)
             is_diff_i = is_diff[sl]
             diff_rows_local = np.flatnonzero(is_diff_i)
-            level_rows_local = np.flatnonzero(~is_diff_i)
+            # Level rows stay at 1.0 on the diagonal (default from np.eye above),
+            # so we only need the diff-row indices for the loop below.
             # For the diff-eq sub-block, set 2 on diagonal and -1 on
             # adjacent off-diagonals, but only when the adjacent diff rows
             # come from consecutive original positions (no calendar gap).

@@ -1,7 +1,6 @@
 """Tests for the data wrangling layer."""
 
 import numpy as np
-import pandas as pd
 import polars as pl
 import pytest
 

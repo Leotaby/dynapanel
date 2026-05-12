@@ -12,7 +12,6 @@ import pytest
 
 from dynapanel import DifferenceGMM, SystemGMM, simulate_dynamic_panel
 
-
 # ---------------------------------------------------------------------------
 # Sanity: basic fit doesn't crash
 # ---------------------------------------------------------------------------

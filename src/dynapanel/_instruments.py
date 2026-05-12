@@ -470,7 +470,6 @@ def assemble(
 
 def _pretty_key(k: tuple) -> str:
     eq, kind, *rest = k
-    eq_tag = "Δ" if eq == "diff" else "L"
     if kind == "gmm":
         if eq == "diff":
             if len(rest) == 2:

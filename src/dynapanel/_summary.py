@@ -21,10 +21,8 @@ The table layout:
 
 from __future__ import annotations
 
-import numpy as np
+import great_tables as gt  # raise ImportError early if not installed
 import polars as pl
-
-import great_tables as gt   # raise ImportError early if not installed
 
 
 def great_tables_summary(results) -> gt.GT:

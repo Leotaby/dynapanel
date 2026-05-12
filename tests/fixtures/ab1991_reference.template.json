@@ -1,0 +1,68 @@
+{
+  "_description": "Reference numbers from a Stata `xtabond2` run on the AB(1991) UK employment dataset. Fill in the TBD values from running scripts/xtabond2_reference.do, save as `ab1991_reference.json` (drop the `.template` suffix), and `tests/test_replication_ab1991.py` will activate.",
+  "_stata_version": "TBD",
+  "_xtabond2_version": "TBD",
+  "_captured_on": "TBD (YYYY-MM-DD)",
+
+  "tolerances": {
+    "coef_abs": 1e-3,
+    "se_abs": 1e-2,
+    "hansen_J_abs": 1e-2,
+    "ar_z_abs": 1e-2,
+    "df_exact": true
+  },
+
+  "difference_gmm_twostep_windmeijer": {
+    "coefs": {
+      "L.n": "TBD",
+      "L2.n": "TBD",
+      "w": "TBD",
+      "L.w": "TBD",
+      "k": "TBD",
+      "L.k": "TBD"
+    },
+    "se_windmeijer": {
+      "L.n": "TBD",
+      "L2.n": "TBD",
+      "w": "TBD",
+      "L.w": "TBD",
+      "k": "TBD",
+      "L.k": "TBD"
+    },
+    "hansen_J": "TBD",
+    "hansen_df": "TBD",
+    "hansen_p": "TBD",
+    "ar1_z": "TBD",
+    "ar1_p": "TBD",
+    "ar2_z": "TBD",
+    "ar2_p": "TBD"
+  },
+
+  "system_gmm_twostep_windmeijer": {
+    "coefs": {
+      "L.n": "TBD",
+      "L2.n": "TBD",
+      "w": "TBD",
+      "L.w": "TBD",
+      "k": "TBD",
+      "L.k": "TBD",
+      "_cons": "TBD"
+    },
+    "se_windmeijer": {
+      "L.n": "TBD",
+      "L2.n": "TBD",
+      "w": "TBD",
+      "L.w": "TBD",
+      "k": "TBD",
+      "L.k": "TBD",
+      "_cons": "TBD"
+    },
+    "hansen_J": "TBD",
+    "hansen_df": "TBD",
+    "hansen_p": "TBD",
+    "ar1_z": "TBD",
+    "ar1_p": "TBD",
+    "ar2_z": "TBD",
+    "ar2_p": "TBD"
+  }
+}

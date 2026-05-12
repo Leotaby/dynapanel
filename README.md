@@ -1,5 +1,11 @@
 # dynapanel
 
+[![tests](https://github.com/Leotaby/dynapanel/actions/workflows/test.yml/badge.svg)](https://github.com/Leotaby/dynapanel/actions/workflows/test.yml)
+[![docs](https://github.com/Leotaby/dynapanel/actions/workflows/docs.yml/badge.svg)](https://leotaby.github.io/dynapanel/)
+[![python](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12-blue)](https://www.python.org/)
+[![license](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+![status](https://img.shields.io/badge/status-experimental%20v0.1-orange)
+
 dynapanel is to xtabond2 what pyfixest is to fixest.
 
 A modern Python implementation of **Difference and System GMM** for
@@ -7,6 +13,11 @@ dynamic panel data — Arellano-Bond, Blundell-Bond, Windmeijer-corrected
 standard errors, Hansen / AR(1) / AR(2) tests, collapsed instruments,
 and publication-ready output tables. Inspired by Stata's `xtabond2`,
 written from scratch in Python.
+
+<p align="center">
+  <img src="docs/images/summary_example.png" alt="dynapanel System GMM summary table — step 2 with Windmeijer-corrected standard errors and Hansen / AR diagnostics" width="780" />
+</p>
+<p align="center"><sub>System GMM on a simulated panel (N=300, T=8, true α=0.6, β=0.5).<br/>Tables render via <a href="https://github.com/posit-dev/great-tables">great_tables</a>; a clean text fallback is built in.</sub></p>
 
 > **Status: experimental v0.1.** The code paths described below all
 > run, the unit tests all pass, and the estimator recovers known
