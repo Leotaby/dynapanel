@@ -28,7 +28,7 @@ from ._gmm import DifferenceGMM, SystemGMM
 from ._results import GMMResults
 from ._simulate import simulate_dynamic_panel
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 __all__ = [
     "DifferenceGMM",
