@@ -172,7 +172,9 @@ about why two-step weights need a pseudo-inverse fallback at 3am.
 
 ## License
 
-MIT.
+Released under the [MIT License](LICENSE). In short: you can use,
+modify, and redistribute the code in commercial or academic work,
+provided you retain the copyright notice. No warranty.
 
 ## Citation
 
